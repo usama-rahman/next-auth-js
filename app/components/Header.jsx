@@ -1,5 +1,7 @@
 import { auth, signIn, signOut } from "@/auth";
 import Image from "next/image";
+import Signin from "./Signin";
+import Signout from "./Signout";
 
 const Header = async () => {
   const session = await auth();
@@ -16,9 +18,10 @@ const Header = async () => {
             height={32}
             className="mx-2 rounded-full "
           />
+          <Signout />
         </div>
       ) : (
-        <div>Signin</div>
+        <Signin />
       )}
     </>
   );
