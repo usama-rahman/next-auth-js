@@ -1,9 +1,13 @@
 "use server";
 
-import { signOut } from "@/auth";
+import { signIn, signOut } from "@/auth";
 
 async function doSignout() {
   await signOut();
 }
 
-export { doSignout };
+async function doSignIn() {
+  await signIn("google", { callbackUrl: "http://localhost:3000/" });
+}
+
+export { doSignout, doSignIn };
