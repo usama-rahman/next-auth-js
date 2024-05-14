@@ -3,6 +3,8 @@ import GoogleProvider from "next-auth/providers/google";
 import { MongoDBAdapter } from "@auth/mongodb-adapter";
 import mongoClientPromise from "./lib/db";
 import CredentialsProvider from "next-auth/providers/credentials";
+import { dbConnect } from "./lib/mongo";
+import { userModel } from "./models/user-model";
 
 export const {
   auth,
